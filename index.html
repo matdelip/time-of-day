@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="utf-8">
     <title>Time of Day</title>
@@ -40,18 +40,68 @@
 		<h1 class="masthead">Time of Day</h1>
 	</header>
     <main>
-	 <header><h3>A JavaScript Project by YOUR NAME HERE</h3></header>
-	    <p>Explain what your page does and how it works here!</p>
-	  <img src="http://dummyimage.com/300x400" alt="Time of Day Image" class="flexible">
+	 <header><h3>A JavaScript Project by Matdeli Parra</h3></header>
+	    <p>A web page that uses JavaScript to determine the current hour, and presents a different image, custom message, and color based on each of the following times of day:<br>
+            <br>Morning (5am to 12 noon)
+            <br>Afternoon (12 noon to 6pm)
+            <br>Evening (6pm to 11pm)
+            <br>Night (11pm to 5am)
+        </p>
+        <div id="timeSection">
+            <h1 id="timeMessage"></h1>
+            <img src="images" alt="Time of Day Image" class="flexible" id="timeImage">
+        </div>
      <footer>
-      <p><small>&copy; 2022 by 
-          YOUR NAME HERE, All Rights Reserved ~ 
+         <p><small>&copy; <span id="copyright"></span>
+             by Matdeli Parra, All Rights Reserved ~
           <a id="html-checker" href="#" target="_blank">Check HTML</a> ~ 
           <a id="css-checker" href="#" target="_blank">Check CSS</a></small>
      </p>
     </footer>
   </main>
  <script>
+     // Get the current year
+     var currentYear = new Date().getFullYear();
+
+     // Update copyright text
+     document.GetElementById("copyright").textContent = "2022-" + currentYear;
+
+     // Get current Time
+     var currentTime = new Date();
+     var currentHour = currentTime.getHours();
+
+     // Get the elements to update
+     var timeMessage = document.getElementById("timeMessage");
+     var timeImage = document.getElementById("timeImage");
+
+     // Set image based on the time of day
+        // Morning
+     if (currentHour >= 5 && currentHour < 12) {
+         timeMessage.textContent = "Rise and Shine!";
+         timeImage.src = "images/morning.jpg";
+         document.body.style.backgroundColor = "#faf0e6";
+         // Afternoon
+     } else if (currentHour >= 12 && currentHour < 18) {
+         timeMessage.textContent = "Go on, Take a break!";
+         timeImage.src = "images/afternoon.jpg";
+         document.body.style.backgroundColor = "#ADD8E6";
+         // Evening
+     } else if (currentHour >= 18 && currentHour < 23) {
+         timeMessage.textContent = "Relax and Unwind";
+         timeImage.src = "images/evening.jpg";
+         document.body.style.backgroundColor = "#bd1159";
+         // Night
+     } else {
+         timeMessage.textContent = "Night night, Sleep tight";
+         timeImage.src = "images/night.jpg";
+         document.body.style.backgroundColor = "#5e5b64";
+     }
+
+
+
+
+
+     // HTML and CSS Validators
     document.getElementById("html-checker").setAttribute("href","https://validator.w3.org/nu/?doc=" + location.href);
     document.getElementById("css-checker").setAttribute("href","https://jigsaw.w3.org/css-validator/validator?uri=" + location.href);  
  </script>

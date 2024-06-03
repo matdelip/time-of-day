@@ -1,0 +1,18 @@
+body {
+    text-align: center;
+}
+
+#timeSection {
+    margin-top: 50px;
+}
+
+#timeMessage {
+    font-size: 24px;
+}
+
+#timeImage {
+    margin-top: 20px;
+    width: 300px;
+    height: auto;
+
+}

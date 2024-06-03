@@ -17,18 +17,24 @@
 			min-height:100%; /* keeps from getting too large on wide screen */
 			}
 		img.flexible {
-			float:right;
-			display:inline-block;
+			display:block;
+            margin: auto;
 			padding:20px;
 			max-width:300px; /* actual size of image */
-			width:33%; /* approximate size taken on screen in maximum view */
+			width:100%; /* approximate size taken on screen in maximum view */
 		}
-		p {margin:10px;}
+		p {
+            text-align: center;
+            margin:10px;}
 		h1,h2,h3,h4,h5,h6{
+            text-align: center;
 			font-weight:normal;
 			margin:10px;
 			}
-		h1.masthead {margin-top:0;}
+		h1.masthead {
+            font-weight: bold;
+            text-align: center;
+            margin-top:0;}
 		footer {
 			text-align:center;
 			clear:both; /* ride below all items */
@@ -40,7 +46,7 @@
 		<h1 class="masthead">Time of Day</h1>
 	</header>
     <main>
-	 <header><h3>A JavaScript Project by Matdeli Parra</h3></header>
+	 <header><h2>A JavaScript Project by Matdeli Parra</h2></header>
 	    <p>A web page that uses JavaScript to determine the current hour, and presents a different image, custom message, and color based on each of the following times of day:<br>
             <br>Morning (5am to 12 noon)
             <br>Afternoon (12 noon to 6pm)
@@ -48,8 +54,8 @@
             <br>Night (11pm to 5am)
         </p>
         <div id="timeSection">
-            <h1 id="timeMessage"></h1>
             <img src="" alt="Time of Day Image" class="flexible" id="timeImage">
+            <h1 id="timeMessage"></h1>
         </div>
      <footer>
          <p><small>&copy; <span id="copyright"></span>
@@ -64,7 +70,7 @@
      var currentYear = new Date().getFullYear();
 
      // Update copyright text
-     document.GetElementById("copyright").textContent = "2022-" + currentYear;
+     document.getElementById("copyright").textContent = "2022-" + currentYear;
 
      // Get current Time
      var currentTime = new Date();
@@ -78,7 +84,7 @@
         // Morning
      if (currentHour >= 5 && currentHour < 12) {
          timeMessage.textContent = "Rise and Shine!";
-         timeImage.src = "images/morning.jpg";
+         timeImage.src = "images/morning.webp";
          document.body.style.backgroundColor = "#faf0e6";
          // Afternoon
      } else if (currentHour >= 12 && currentHour < 18) {

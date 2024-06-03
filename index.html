@@ -49,7 +49,7 @@
         </p>
         <div id="timeSection">
             <h1 id="timeMessage"></h1>
-            <img src="images" alt="Time of Day Image" class="flexible" id="timeImage">
+            <img src="/images" alt="Time of Day Image" class="flexible" id="timeImage">
         </div>
      <footer>
          <p><small>&copy; <span id="copyright"></span>
@@ -78,22 +78,22 @@
         // Morning
      if (currentHour >= 5 && currentHour < 12) {
          timeMessage.textContent = "Rise and Shine!";
-         timeImage.src = "images/morning.jpg";
+         timeImage.src = "../images/morning.jpg";
          document.body.style.backgroundColor = "#faf0e6";
          // Afternoon
      } else if (currentHour >= 12 && currentHour < 18) {
          timeMessage.textContent = "Go on, Take a break!";
-         timeImage.src = "images/afternoon.jpg";
+         timeImage.src = "../images/afternoon.jpg";
          document.body.style.backgroundColor = "#ADD8E6";
          // Evening
      } else if (currentHour >= 18 && currentHour < 23) {
          timeMessage.textContent = "Relax and Unwind";
-         timeImage.src = "images/evening.jpg";
+         timeImage.src = "../images/evening.jpg";
          document.body.style.backgroundColor = "#bd1159";
          // Night
      } else {
          timeMessage.textContent = "Night night, Sleep tight";
-         timeImage.src = "images/night.jpg";
+         timeImage.src = "../images/night.jpg";
          document.body.style.backgroundColor = "#5e5b64";
      }
 
